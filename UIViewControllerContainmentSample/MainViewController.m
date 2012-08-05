@@ -82,9 +82,9 @@
     
     // handle view controller hierarchy
     [self addChildViewController:_topRightController];
-    [topRightController didMoveToParentViewController:self];
+    [_topRightController didMoveToParentViewController:self];
     
-    if([self isViewLoaded]) {
+    if ([self isViewLoaded]) {
         [self updateTopRightView];
     }
 }
@@ -104,7 +104,7 @@
     [_bottomRightController didMoveToParentViewController:self];
     
     if ([self isViewLoaded]) {
-        [self updateTopRightView];
+        [self updateBottomRightView];
     }
 }
 
