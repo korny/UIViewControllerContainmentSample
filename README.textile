@@ -1,4 +1,15 @@
-This sample demonstrates how to use the new view controller containment APIs in iOS 5
-to create your own UIViewController containers. This is the code I demonstrated in my talk
-"iOS 5 UIViewController containment" at iPhoneDevCon 2011. Slides for this talk are online
-at "Speaker Deck":http://speakerdeck.com/u/peterfriese/p/ios-5-uiviewcontroller-containment.
+h2. Original Description
+
+This is the code I demonstrated in my talk "iOS 5 UIViewController containment" at iPhoneDevCon 2011.
+Slides for this talk are online at "Speaker Deck":http://speakerdeck.com/u/peterfriese/p/ios-5-uiviewcontroller-containment.
+
+h2. korny's fork
+
+Peter's example is awesome for learning this stuff! I updated the code and slimmed it down to a minimum:
+
+* use a Storyboard instead of a .xib file
+* don't @synthesize
+* use lazy instanciation
+* a custom initializer for SampleView
+* removed all methods that don't do anything
+* fixed some typos
