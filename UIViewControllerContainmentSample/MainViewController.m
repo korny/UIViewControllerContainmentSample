@@ -82,6 +82,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setupContainedViewControllers];
 }
 
@@ -95,15 +96,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self layoutForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
-}
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-	[self layoutForOrientation:toInterfaceOrientation];
 }
 
 @end

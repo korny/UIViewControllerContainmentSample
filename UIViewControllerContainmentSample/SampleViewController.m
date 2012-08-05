@@ -37,17 +37,8 @@
     }
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillLayoutSubviews {
     [self layoutForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    [UIView animateWithDuration:duration animations:^{
-        [self layoutForOrientation:toInterfaceOrientation];
-    }];
 }
 
 @end
