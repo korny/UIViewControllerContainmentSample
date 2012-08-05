@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DC9A29D15CEC3F800FF9554 /* ViewControllerContainment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */; };
+		0DDACE0315CEDCFD00A95AD7 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 0DDACE0215CEDCFD00A95AD7 /* README.textile */; };
 		8849E35C14869486008C79BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8849E35B14869486008C79BC /* UIKit.framework */; };
 		8849E35E14869486008C79BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8849E35D14869486008C79BC /* Foundation.framework */; };
 		8849E36014869486008C79BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8849E35F14869486008C79BC /* CoreGraphics.framework */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewControllerContainment.storyboard; sourceTree = "<group>"; };
+		0DDACE0215CEDCFD00A95AD7 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		8849E35714869486008C79BC /* UIViewControllerContainmentSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewControllerContainmentSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8849E35B14869486008C79BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8849E35D14869486008C79BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +55,7 @@
 		8849E34C14869486008C79BC = {
 			isa = PBXGroup;
 			children = (
+				0DDACE0215CEDCFD00A95AD7 /* README.textile */,
 				8849E36114869486008C79BC /* UIViewControllerContainmentSample */,
 				8849E35A14869486008C79BC /* Frameworks */,
 				8849E35814869486008C79BC /* Products */,
@@ -156,6 +159,7 @@
 			files = (
 				8849E36614869486008C79BC /* InfoPlist.strings in Resources */,
 				0DC9A29D15CEC3F800FF9554 /* ViewControllerContainment.storyboard in Resources */,
+				0DDACE0315CEDCFD00A95AD7 /* README.textile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

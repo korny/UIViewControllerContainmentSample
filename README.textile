@@ -1,0 +1,4 @@
+This sample demonstrates how to use the new view controller containment APIs in iOS 5
+to create your own UIViewController containers. This is the code I demonstrated in my talk
+"iOS 5 UIViewController containment" at iPhoneDevCon 2011. Slides for this talk are online
+at "Speaker Deck":http://speakerdeck.com/u/peterfriese/p/ios-5-uiviewcontroller-containment.
