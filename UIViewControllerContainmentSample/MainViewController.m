@@ -63,17 +63,25 @@
 
 #pragma mark - layout
 
+#define PADDING_WIDTH 20
+
 - (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
-    if (UIInterfaceOrientationIsPortrait(orientation)) {
-        self.leftView.frame = CGRectMake(20, 20, 340, 964);
-        self.topRightView.frame = CGRectMake(380, 20, 368, 374);
-        self.bottomRightView.frame = CGRectMake(380, 415, 368, 569);
-    }
-    else {
-        self.leftView.frame = CGRectMake(20, 20, 340, 708);
-        self.topRightView.frame = CGRectMake(380, 20, 624, 374);
-        self.bottomRightView.frame = CGRectMake(380, 415, 624, 313);
-    }
+    self.leftView.frame        = CGRectMake(PADDING_WIDTH,
+                                            PADDING_WIDTH,
+                                            360,
+                                            self.view.bounds.size.height - PADDING_WIDTH * 2);
+    self.topRightView.frame    = CGRectMake(self.leftView.frame.size.width + PADDING_WIDTH * 2,
+                                            PADDING_WIDTH,
+                                            self.view.bounds.size.width - self.leftView.frame.size.width - PADDING_WIDTH * 3,
+                                            (self.view.bounds.size.height - PADDING_WIDTH * 3) / 2);
+    self.bottomRightView.frame = CGRectMake(self.leftView.frame.size.width + PADDING_WIDTH * 2,
+                                            self.topRightView.frame.size.height + PADDING_WIDTH * 2,
+                                            self.view.bounds.size.width - self.leftView.frame.size.width - PADDING_WIDTH * 3,
+                                            self.view.bounds.size.height - self.topRightView.frame.size.height - PADDING_WIDTH * 3);
+}
+
+- (void)viewWillLayoutSubviews {
+    [self layoutForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
 }
 
 #pragma mark - View lifecycle
