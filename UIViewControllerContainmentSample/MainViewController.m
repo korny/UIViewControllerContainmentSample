@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "SampleViewController.h"
 
 @interface MainViewController ()
 
@@ -14,124 +15,57 @@
 @property (weak, nonatomic) IBOutlet UIView *topRightView;
 @property (weak, nonatomic) IBOutlet UIView *bottomRightView;
 
-@property (strong, nonatomic) SampleViewController *leftController;
-@property (strong, nonatomic) SampleViewController *topRightController;
-@property (strong, nonatomic) SampleViewController *bottomRightController;
+@property (strong, nonatomic) SampleViewController *leftViewController;
+@property (strong, nonatomic) SampleViewController *topRightViewController;
+@property (strong, nonatomic) SampleViewController *bottomRightViewController;
 
 @end
 
 @implementation MainViewController
 
+- (SampleViewController *)leftViewController {
+    if (!_leftViewController) {
+        _leftViewController = [[SampleViewController alloc] initWithColor:[UIColor blueColor] secondaryColor:[UIColor lightGrayColor]];
+    }
+    
+    return _leftViewController;
+}
+
+- (SampleViewController *)topRightViewController {
+    if (!_topRightViewController) {
+        _topRightViewController = [[SampleViewController alloc] initWithColor:[UIColor redColor] secondaryColor:[UIColor grayColor]];
+    }
+    
+    return _topRightViewController;
+}
+
+- (SampleViewController *)bottomRightViewController {
+    if (!_bottomRightViewController) {
+        _bottomRightViewController = [[SampleViewController alloc] initWithColor:[UIColor greenColor] secondaryColor:[UIColor darkGrayColor]];
+    }
+    
+    return _bottomRightViewController;
+}
+
 #pragma mark - Child View Controllers
 
-- (void)updateLeftView
-{
-    self.leftController.view.frame = self.leftView.bounds;
-    [self.leftView addSubview:self.leftController.view];    
-}
-
-- (void)setLeftController:(SampleViewController *)leftController
-{
-    _leftController = leftController;
+- (void)addChildViewController:(UIViewController *)childController forView:(UIView *)view {
+    [self addChildViewController:childController];
+    [childController didMoveToParentViewController:self];
     
-    // handle view controller hierarchy
-    [self addChildViewController:_leftController];
-    [_leftController didMoveToParentViewController:self];
-    
-    if ([self isViewLoaded]) {
-        [self updateLeftView];
-    }
+    childController.view.frame = view.bounds;
+    [view addSubview:childController.view];
 }
 
-- (void)updateTopRightView
-{
-    self.topRightController.view.frame = self.topRightView.bounds;
-    [self.topRightView addSubview:self.topRightController.view];
+- (void)setupContainedViewControllers {
+    [self addChildViewController:self.leftViewController        forView:self.leftView];
+    [self addChildViewController:self.topRightViewController    forView:self.topRightView];
+    [self addChildViewController:self.bottomRightViewController forView:self.bottomRightView];
 }
 
-- (void)setTopRightController:(SampleViewController *)topRightController
-{
-    _topRightController = topRightController;
-    
-    // handle view controller hierarchy
-    [self addChildViewController:_topRightController];
-    [_topRightController didMoveToParentViewController:self];
-    
-    if ([self isViewLoaded]) {
-        [self updateTopRightView];
-    }
-}
+#pragma mark - layout
 
-- (void)updateBottomRightView
-{
-    self.bottomRightController.view.frame = self.bottomRightView.bounds;
-    [self.bottomRightView addSubview:self.bottomRightController.view];    
-}
-
-- (void)setBottomRightController:(SampleViewController *)bottomRightController
-{
-    _bottomRightController = bottomRightController;
-    
-    // handle view controller hierarchy
-    [self addChildViewController:_bottomRightController];
-    [_bottomRightController didMoveToParentViewController:self];
-    
-    if ([self isViewLoaded]) {
-        [self updateBottomRightView];
-    }
-}
-
-- (void)setupContainedViewControllers
-{
-    SampleViewController *leftViewController = [[SampleViewController alloc] init];
-    leftViewController.color = [UIColor blueColor];
-    leftViewController.secondaryColor = [UIColor lightGrayColor];
-    self.leftController = leftViewController;
-
-    SampleViewController *topRightViewController = [[SampleViewController alloc] init];
-    topRightViewController.color = [UIColor redColor];
-    topRightViewController.secondaryColor = [UIColor grayColor];
-    self.topRightController = topRightViewController;
-
-    SampleViewController *bottomRightViewController = [[SampleViewController alloc] init];
-    bottomRightViewController.color = [UIColor greenColor];
-    bottomRightViewController.secondaryColor = [UIColor blackColor];
-    self.bottomRightController = bottomRightViewController;
-}
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    NSLog(@"MainViewController viewDidLoad");
-    [self setupContainedViewControllers];
-}
-
-- (void)viewDidUnload
-{
-    NSLog(@"MainViewController viewDidUnload");    
-    [self setLeftController:nil];
-    [self setTopRightController:nil];
-    [self setBottomRightController:nil];
-    [self setLeftView:nil];
-    [self setTopRightView:nil];
-    [self setBottomRightView:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    NSLog(@"MainViewController shouldAutorotateToInterfaceOrientation %d", interfaceOrientation);    
-    // Return YES for supported orientations
-	return YES;
-}
-
-- (void)layoutForOrientation:(UIInterfaceOrientation)orientation
-{
+- (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
     if (UIInterfaceOrientationIsPortrait(orientation)) {
         self.leftView.frame = CGRectMake(20, 20, 340, 964);
         self.topRightView.frame = CGRectMake(380, 20, 368, 374);
@@ -144,16 +78,31 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self layoutForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
-    NSLog(@"MainViewController viewWIllAppear");    
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupContainedViewControllers];
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    NSLog(@"MainViewController viewWillRotateToInterfaceOrientation");    
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    
+    [self setLeftView:nil];
+    [self setTopRightView:nil];
+    [self setBottomRightView:nil];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	return YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self layoutForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [UIView animateWithDuration:duration animations:^{
         [self layoutForOrientation:toInterfaceOrientation];
     }];

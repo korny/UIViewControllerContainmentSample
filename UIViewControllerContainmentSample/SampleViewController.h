@@ -10,7 +10,6 @@
 
 @interface SampleViewController : UIViewController
 
-@property (nonatomic, copy) UIColor *color;
-@property (nonatomic, copy) UIColor *secondaryColor;
+- (SampleViewController *)initWithColor:(UIColor *)color secondaryColor:(UIColor *)secondaryColor;
 
 @end

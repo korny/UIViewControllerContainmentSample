@@ -80,12 +80,12 @@
 		8849E36114869486008C79BC /* UIViewControllerContainmentSample */ = {
 			isa = PBXGroup;
 			children = (
+				0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */,
 				8849E372148694AF008C79BC /* MainViewController.h */,
 				8849E373148694AF008C79BC /* MainViewController.m */,
 				8849E375148694AF008C79BC /* SampleViewController.h */,
 				8849E376148694AF008C79BC /* SampleViewController.m */,
 				8849E36214869486008C79BC /* Supporting Files */,
-				0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */,
 			);
 			path = UIViewControllerContainmentSample;
 			sourceTree = "<group>";

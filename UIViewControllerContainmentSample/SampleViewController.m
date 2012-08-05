@@ -8,10 +8,27 @@
 
 #import "SampleViewController.h"
 
+@interface SampleViewController ()
+@property (nonatomic, copy) UIColor *color;
+@property (nonatomic, copy) UIColor *secondaryColor;
+@end
+
 @implementation SampleViewController
 
-- (void)layoutForOrientation:(UIInterfaceOrientation)orientation
-{
+- (id)initWithColor:(UIColor *)color secondaryColor:(UIColor *)secondaryColor {
+    self = [self init];
+    
+    if (self) {
+        self.color = color;
+        self.secondaryColor = secondaryColor;
+    }
+    
+    return self;
+}
+
+#pragma mark - layout
+
+- (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
     if (UIInterfaceOrientationIsLandscape(orientation)) {
         [self.view setBackgroundColor:self.color];
     }
@@ -20,37 +37,14 @@
     }
 }
 
-- (void)updateLayout
-{
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     [self layoutForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
 }
 
-- (void)setColor:(UIColor *)color
-{
-    _color = color;
-    [self updateLayout];
-}
-
-- (void)setSecondaryColor:(UIColor *)secondaryColor
-{
-    _secondaryColor = secondaryColor;
-    [self updateLayout];    
-}
-
-#pragma mark - View lifecycle
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self updateLayout];
-    NSLog(@"SampleViewController viewDidLoad");    
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    NSLog(@"SampleViewController willRotateToInterfaceOrientation");
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [UIView animateWithDuration:duration animations:^{
         [self layoutForOrientation:toInterfaceOrientation];
     }];
