@@ -10,9 +10,9 @@
 
 @interface MainViewController ()
 
-@property (strong, nonatomic) IBOutlet UIView *leftView;
-@property (strong, nonatomic) IBOutlet UIView *topRightView;
-@property (strong, nonatomic) IBOutlet UIView *bottomRightView;
+@property (weak, nonatomic) IBOutlet UIView *leftView;
+@property (weak, nonatomic) IBOutlet UIView *topRightView;
+@property (weak, nonatomic) IBOutlet UIView *bottomRightView;
 
 @property (strong, nonatomic) SampleViewController *leftController;
 @property (strong, nonatomic) SampleViewController *topRightController;
