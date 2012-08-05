@@ -10,7 +10,6 @@
 #import "SampleViewController.h"
 
 @interface MainViewController ()
-
 @property (weak, nonatomic) IBOutlet UIView *leftView;
 @property (weak, nonatomic) IBOutlet UIView *topRightView;
 @property (weak, nonatomic) IBOutlet UIView *bottomRightView;
@@ -18,7 +17,6 @@
 @property (strong, nonatomic) SampleViewController *leftViewController;
 @property (strong, nonatomic) SampleViewController *topRightViewController;
 @property (strong, nonatomic) SampleViewController *bottomRightViewController;
-
 @end
 
 @implementation MainViewController
@@ -89,13 +87,18 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
     
-    [self setLeftView:nil];
-    [self setTopRightView:nil];
-    [self setBottomRightView:nil];
+    self.leftView = nil;
+    self.topRightView = nil;
+    self.bottomRightView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
 }
+
+// Turn off color changing.
+// - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers {
+//     return NO;
+// }
 
 @end
