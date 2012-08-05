@@ -47,9 +47,9 @@
     [self layoutForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
 }
 
-- (void)setColor:(UIColor *)newColor
+- (void)setColor:(UIColor *)color
 {
-    _color = newColor;
+    _color = color;
     [self updateLayout];
 }
 
