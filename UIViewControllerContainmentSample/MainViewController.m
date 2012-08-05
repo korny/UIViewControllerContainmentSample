@@ -22,39 +22,12 @@
 
 @implementation MainViewController
 
-@synthesize leftView;
-@synthesize topRightView;
-@synthesize bottomRightView;
-
-@synthesize leftController = _leftController;
-@synthesize topRightController = _topRightController;
-@synthesize bottomRightController = _bottomRightController;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    NSLog(@"MainViewController initWithNibName");    
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-    NSLog(@"MainViewController didReceiveMomoryWarning");    
-}
-
 #pragma mark - Child View Controllers
 
 - (void)updateLeftView
 {
-    _leftController.view.frame = leftView.bounds;
-    [leftView addSubview:_leftController.view];    
+    self.leftController.view.frame = self.leftView.bounds;
+    [self.leftView addSubview:self.leftController.view];    
 }
 
 - (void)setLeftController:(SampleViewController *)leftController
@@ -72,8 +45,8 @@
 
 - (void)updateTopRightView
 {
-    _topRightController.view.frame = topRightView.bounds;
-    [topRightView addSubview:_topRightController.view];
+    self.topRightController.view.frame = self.topRightView.bounds;
+    [self.topRightView addSubview:self.topRightController.view];
 }
 
 - (void)setTopRightController:(SampleViewController *)topRightController
@@ -91,8 +64,8 @@
 
 - (void)updateBottomRightView
 {
-    _bottomRightController.view.frame = bottomRightView.bounds;
-    [bottomRightView addSubview:_bottomRightController.view];    
+    self.bottomRightController.view.frame = self.bottomRightView.bounds;
+    [self.bottomRightView addSubview:self.bottomRightController.view];    
 }
 
 - (void)setBottomRightController:(SampleViewController *)bottomRightController
@@ -134,9 +107,6 @@
     // Do any additional setup after loading the view from its nib.
     NSLog(@"MainViewController viewDidLoad");
     [self setupContainedViewControllers];
-    [self updateLeftView];
-    [self updateTopRightView];
-    [self updateBottomRightView];
 }
 
 - (void)viewDidUnload
@@ -163,14 +133,14 @@
 - (void)layoutForOrientation:(UIInterfaceOrientation)orientation
 {
     if (UIInterfaceOrientationIsPortrait(orientation)) {
-        leftView.frame = CGRectMake(20, 20, 340, 964);
-        topRightView.frame = CGRectMake(380, 20, 368, 374);
-        bottomRightView.frame = CGRectMake(380, 415, 368, 569);
+        self.leftView.frame = CGRectMake(20, 20, 340, 964);
+        self.topRightView.frame = CGRectMake(380, 20, 368, 374);
+        self.bottomRightView.frame = CGRectMake(380, 415, 368, 569);
     }
     else {
-        leftView.frame = CGRectMake(20, 20, 340, 708);
-        topRightView.frame = CGRectMake(380, 20, 624, 374);
-        bottomRightView.frame = CGRectMake(380, 415, 624, 313);
+        self.leftView.frame = CGRectMake(20, 20, 340, 708);
+        self.topRightView.frame = CGRectMake(380, 20, 624, 374);
+        self.bottomRightView.frame = CGRectMake(380, 415, 624, 313);
     }
 }
 
