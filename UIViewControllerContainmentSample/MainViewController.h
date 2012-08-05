@@ -10,13 +10,4 @@
 #import "SampleViewController.h"
 
 @interface MainViewController : UIViewController
-
-@property (strong, nonatomic) IBOutlet UIView *leftView;
-@property (strong, nonatomic) IBOutlet UIView *topRightView;
-@property (strong, nonatomic) IBOutlet UIView *bottomRightView;
-
-@property (strong, nonatomic) SampleViewController *leftController;
-@property (strong, nonatomic) SampleViewController *topRightController;
-@property (strong, nonatomic) SampleViewController *bottomRightController;
-
 @end

@@ -8,6 +8,18 @@
 
 #import "MainViewController.h"
 
+@interface MainViewController ()
+
+@property (strong, nonatomic) IBOutlet UIView *leftView;
+@property (strong, nonatomic) IBOutlet UIView *topRightView;
+@property (strong, nonatomic) IBOutlet UIView *bottomRightView;
+
+@property (strong, nonatomic) SampleViewController *leftController;
+@property (strong, nonatomic) SampleViewController *topRightController;
+@property (strong, nonatomic) SampleViewController *bottomRightController;
+
+@end
+
 @implementation MainViewController
 
 @synthesize leftView;
@@ -96,6 +108,24 @@
     }
 }
 
+- (void)setupContainedViewControllers
+{
+    SampleViewController *leftViewController = [[SampleViewController alloc] init];
+    leftViewController.color = [UIColor blueColor];
+    leftViewController.secondaryColor = [UIColor lightGrayColor];
+    self.leftController = leftViewController;
+
+    SampleViewController *topRightViewController = [[SampleViewController alloc] init];
+    topRightViewController.color = [UIColor redColor];
+    topRightViewController.secondaryColor = [UIColor grayColor];
+    self.topRightController = topRightViewController;
+
+    SampleViewController *bottomRightViewController = [[SampleViewController alloc] init];
+    bottomRightViewController.color = [UIColor greenColor];
+    bottomRightViewController.secondaryColor = [UIColor blackColor];
+    self.bottomRightController = bottomRightViewController;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -103,6 +133,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     NSLog(@"MainViewController viewDidLoad");
+    [self setupContainedViewControllers];
     [self updateLeftView];
     [self updateTopRightView];
     [self updateBottomRightView];

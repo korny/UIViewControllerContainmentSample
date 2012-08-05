@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DC9A29D15CEC3F800FF9554 /* ViewControllerContainment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */; };
 		8849E35C14869486008C79BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8849E35B14869486008C79BC /* UIKit.framework */; };
 		8849E35E14869486008C79BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8849E35D14869486008C79BC /* Foundation.framework */; };
 		8849E36014869486008C79BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8849E35F14869486008C79BC /* CoreGraphics.framework */; };
@@ -14,11 +15,11 @@
 		8849E36814869486008C79BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849E36714869486008C79BC /* main.m */; };
 		8849E36C14869486008C79BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849E36B14869486008C79BC /* AppDelegate.m */; };
 		8849E377148694AF008C79BC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849E373148694AF008C79BC /* MainViewController.m */; };
-		8849E378148694AF008C79BC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8849E374148694AF008C79BC /* MainViewController.xib */; };
 		8849E379148694AF008C79BC /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849E376148694AF008C79BC /* SampleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewControllerContainment.storyboard; sourceTree = "<group>"; };
 		8849E35714869486008C79BC /* UIViewControllerContainmentSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewControllerContainmentSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8849E35B14869486008C79BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8849E35D14869486008C79BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -31,7 +32,6 @@
 		8849E36B14869486008C79BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8849E372148694AF008C79BC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		8849E373148694AF008C79BC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		8849E374148694AF008C79BC /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		8849E375148694AF008C79BC /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
 		8849E376148694AF008C79BC /* SampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,12 +82,10 @@
 			children = (
 				8849E372148694AF008C79BC /* MainViewController.h */,
 				8849E373148694AF008C79BC /* MainViewController.m */,
-				8849E374148694AF008C79BC /* MainViewController.xib */,
 				8849E375148694AF008C79BC /* SampleViewController.h */,
 				8849E376148694AF008C79BC /* SampleViewController.m */,
-				8849E36A14869486008C79BC /* AppDelegate.h */,
-				8849E36B14869486008C79BC /* AppDelegate.m */,
 				8849E36214869486008C79BC /* Supporting Files */,
+				0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */,
 			);
 			path = UIViewControllerContainmentSample;
 			sourceTree = "<group>";
@@ -98,6 +96,8 @@
 				8849E36314869486008C79BC /* UIViewControllerContainmentSample-Info.plist */,
 				8849E36414869486008C79BC /* InfoPlist.strings */,
 				8849E36714869486008C79BC /* main.m */,
+				8849E36A14869486008C79BC /* AppDelegate.h */,
+				8849E36B14869486008C79BC /* AppDelegate.m */,
 				8849E36914869486008C79BC /* UIViewControllerContainmentSample-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -155,7 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8849E36614869486008C79BC /* InfoPlist.strings in Resources */,
-				8849E378148694AF008C79BC /* MainViewController.xib in Resources */,
+				0DC9A29D15CEC3F800FF9554 /* ViewControllerContainment.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +275,7 @@
 				8849E37114869486008C79BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
