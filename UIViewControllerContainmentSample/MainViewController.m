@@ -47,14 +47,6 @@
 
 #pragma mark - Child View Controllers
 
-- (void)addChildViewController:(UIViewController *)childController forView:(UIView *)view {
-    [self addChildViewController:childController];
-    [childController didMoveToParentViewController:self];
-    
-    childController.view.frame = view.bounds;
-    [view addSubview:childController.view];
-}
-
 - (void)setupContainedViewControllers {
     [self addChildViewController:self.leftViewController        forView:self.leftView];
     [self addChildViewController:self.topRightViewController    forView:self.topRightView];
@@ -85,12 +77,6 @@
 }
 
 #pragma mark - View lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self setupContainedViewControllers];
-}
 
 - (void)viewDidUnload {
     [super viewDidUnload];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D6DC92415D05A700003C69C /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DC92315D05A700003C69C /* ContainerViewController.m */; };
 		0DC9A29D15CEC3F800FF9554 /* ViewControllerContainment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */; };
 		0DDACE0315CEDCFD00A95AD7 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 0DDACE0215CEDCFD00A95AD7 /* README.textile */; };
 		8849E35C14869486008C79BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8849E35B14869486008C79BC /* UIKit.framework */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D6DC92215D05A700003C69C /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		0D6DC92315D05A700003C69C /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewControllerContainment.storyboard; sourceTree = "<group>"; };
 		0DDACE0215CEDCFD00A95AD7 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		8849E35714869486008C79BC /* UIViewControllerContainmentSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewControllerContainmentSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +89,8 @@
 				0DC9A29C15CEC3F800FF9554 /* ViewControllerContainment.storyboard */,
 				8849E372148694AF008C79BC /* MainViewController.h */,
 				8849E373148694AF008C79BC /* MainViewController.m */,
+				0D6DC92215D05A700003C69C /* ContainerViewController.h */,
+				0D6DC92315D05A700003C69C /* ContainerViewController.m */,
 				8849E375148694AF008C79BC /* SampleViewController.h */,
 				8849E376148694AF008C79BC /* SampleViewController.m */,
 				8849E36214869486008C79BC /* Supporting Files */,
@@ -174,6 +179,7 @@
 				8849E36C14869486008C79BC /* AppDelegate.m in Sources */,
 				8849E377148694AF008C79BC /* MainViewController.m in Sources */,
 				8849E379148694AF008C79BC /* SampleViewController.m in Sources */,
+				0D6DC92415D05A700003C69C /* ContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

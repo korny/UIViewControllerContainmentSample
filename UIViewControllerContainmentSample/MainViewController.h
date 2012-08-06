@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContainerViewController.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : ContainerViewController
 @end
