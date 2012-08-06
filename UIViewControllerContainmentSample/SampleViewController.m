@@ -15,18 +15,12 @@
 
 @implementation SampleViewController
 
-- (id)initWithColor:(UIColor *)color secondaryColor:(UIColor *)secondaryColor {
-    self = [self init];
-    
-    if (self) {
-        self.color = color;
-        self.secondaryColor = secondaryColor;
-    }
-    
-    return self;
+- (void)setColor:(UIColor *)color secondaryColor:(UIColor *)secondaryColor {
+    self.color = color;
+    self.secondaryColor = secondaryColor;
 }
 
-#pragma mark - layout
+#pragma mark - Layout
 
 - (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
     if (UIInterfaceOrientationIsLandscape(orientation)) {
@@ -39,6 +33,20 @@
 
 - (void)viewWillLayoutSubviews {
     [self layoutForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 50;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
+    
+    return cell;
 }
 
 @end

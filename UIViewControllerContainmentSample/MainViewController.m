@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "SampleNavigationController.h"
 #import "SampleViewController.h"
 
 @interface MainViewController ()
@@ -14,32 +15,35 @@
 @property (weak, nonatomic) IBOutlet UIView *topRightView;
 @property (weak, nonatomic) IBOutlet UIView *bottomRightView;
 
-@property (strong, nonatomic) SampleViewController *leftViewController;
-@property (strong, nonatomic) SampleViewController *topRightViewController;
-@property (strong, nonatomic) SampleViewController *bottomRightViewController;
+@property (strong, nonatomic) SampleNavigationController *leftViewController;
+@property (strong, nonatomic) SampleNavigationController *topRightViewController;
+@property (strong, nonatomic) SampleNavigationController *bottomRightViewController;
 @end
 
 @implementation MainViewController
 
-- (SampleViewController *)leftViewController {
+- (SampleNavigationController *)leftViewController {
     if (!_leftViewController) {
-        _leftViewController = [[SampleViewController alloc] initWithColor:[UIColor blueColor] secondaryColor:[UIColor lightGrayColor]];
+        _leftViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"SampleViewController"];
+        [_leftViewController.sampleViewController setColor:[UIColor blueColor] secondaryColor:[UIColor lightGrayColor]];
     }
     
     return _leftViewController;
 }
 
-- (SampleViewController *)topRightViewController {
+- (SampleNavigationController *)topRightViewController {
     if (!_topRightViewController) {
-        _topRightViewController = [[SampleViewController alloc] initWithColor:[UIColor redColor] secondaryColor:[UIColor grayColor]];
+        _topRightViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"SampleViewController"];
+        [_topRightViewController.sampleViewController setColor:[UIColor redColor] secondaryColor:[UIColor grayColor]];
     }
     
     return _topRightViewController;
 }
 
-- (SampleViewController *)bottomRightViewController {
+- (SampleNavigationController *)bottomRightViewController {
     if (!_bottomRightViewController) {
-        _bottomRightViewController = [[SampleViewController alloc] initWithColor:[UIColor greenColor] secondaryColor:[UIColor darkGrayColor]];
+        _bottomRightViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"SampleViewController"];
+        [_bottomRightViewController.sampleViewController setColor:[UIColor greenColor] secondaryColor:[UIColor darkGrayColor]];
     }
     
     return _bottomRightViewController;
@@ -49,10 +53,9 @@
 
 - (void)addChildViewController:(UIViewController *)childController forView:(UIView *)view {
     [self addChildViewController:childController];
-    [childController didMoveToParentViewController:self];
-    
     childController.view.frame = view.bounds;
     [view addSubview:childController.view];
+    [childController didMoveToParentViewController:self];
 }
 
 - (void)setupContainedViewControllers {
@@ -61,10 +64,9 @@
     [self addChildViewController:self.bottomRightViewController forView:self.bottomRightView];
 }
 
-#pragma mark - layout
+#pragma mark - Layout
 
 #define PADDING_WIDTH 20
-
 - (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
     self.leftView.frame        = CGRectMake(PADDING_WIDTH,
                                             PADDING_WIDTH,

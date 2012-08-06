@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SampleViewController : UIViewController
+@interface SampleViewController : UITableViewController <UITableViewDataSource>
 
-- (SampleViewController *)initWithColor:(UIColor *)color secondaryColor:(UIColor *)secondaryColor;
+- (void)setColor:(UIColor *)color secondaryColor:(UIColor *)secondaryColor;
 
 @end

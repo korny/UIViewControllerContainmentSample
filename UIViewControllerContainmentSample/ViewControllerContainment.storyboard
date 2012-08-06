@@ -46,6 +46,92 @@
             </objects>
             <point key="canvasLocation" x="690" y="-286"/>
         </scene>
+        <!--Sample View Controller-->
+        <scene sceneID="J2b-Z5-x9D">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hJN-H9-Ze0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController storyboardIdentifier="" id="bXU-TI-oFb" customClass="SampleViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QCc-h5-RNB">
+                        <rect key="frame" x="0.0" y="44" width="400" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="o9G-0c-lu1">
+                                <rect key="frame" x="0.0" y="22" width="400" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="380" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="QPd-Sx-qfr" kind="push" id="HR7-Pb-Eex"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bXU-TI-oFb" id="npA-GJ-Ncz"/>
+                            <outlet property="delegate" destination="bXU-TI-oFb" id="KXh-vm-Wgq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="zWk-y5-oFI"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2849" y="-107"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XYb-92-85D">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nhf-Pc-Izg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="QPd-Sx-qfr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gg0-in-U6Z">
+                        <rect key="frame" x="0.0" y="44" width="400" height="400"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ji5-dI-X8B">
+                                <rect key="frame" x="164" y="181" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Test">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TBn-aH-dfu"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3366" y="-107"/>
+        </scene>
+        <!--Sample Navigation Controller-->
+        <scene sceneID="Ecz-J7-pqB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GV7-Mf-4qB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="SampleViewController" id="lGU-lD-Bjm" customClass="SampleNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rs9-4o-yvV">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bXU-TI-oFb" kind="relationship" relationship="rootViewController" id="OCv-Hf-ILf"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1875" y="-107"/>
+        </scene>
     </scenes>
     <classes>
         <class className="MainViewController" superclassName="UIViewController">
@@ -55,6 +141,12 @@
                 <relationship kind="outlet" name="leftView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="topRightView" candidateClass="UIView"/>
             </relationships>
+        </class>
+        <class className="SampleNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SampleNavigationController.h"/>
+        </class>
+        <class className="SampleViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SampleViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
