@@ -24,12 +24,16 @@
     // overwrite this method in subclasses using addChildViewController:forView:
 }
 
-- (void)addChildViewController:(UIViewController *)childController forView:(UIView *)view {
+- (void)addChildViewController:(UIViewController *)childController forSubview:(UIView *)subview {
     [self addChildViewController:childController];
     [childController didMoveToParentViewController:self];
     
-    childController.view.frame = view.bounds;
-    [view addSubview:childController.view];
+    childController.view.frame = subview.bounds;
+    [subview addSubview:childController.view];
+}
+
+- (void)addChildViewControllerWithIdentifier:(NSString *)identifier forSubview:(UIView *)subview {
+    [self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:identifier] forSubview:subview];
 }
 
 @end

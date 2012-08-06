@@ -17,7 +17,6 @@
 		8849E36814869486008C79BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849E36714869486008C79BC /* main.m */; };
 		8849E36C14869486008C79BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849E36B14869486008C79BC /* AppDelegate.m */; };
 		8849E377148694AF008C79BC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849E373148694AF008C79BC /* MainViewController.m */; };
-		8849E379148694AF008C79BC /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849E376148694AF008C79BC /* SampleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +36,6 @@
 		8849E36B14869486008C79BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8849E372148694AF008C79BC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		8849E373148694AF008C79BC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		8849E375148694AF008C79BC /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
-		8849E376148694AF008C79BC /* SampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +88,6 @@
 				8849E373148694AF008C79BC /* MainViewController.m */,
 				0D6DC92215D05A700003C69C /* ContainerViewController.h */,
 				0D6DC92315D05A700003C69C /* ContainerViewController.m */,
-				8849E375148694AF008C79BC /* SampleViewController.h */,
-				8849E376148694AF008C79BC /* SampleViewController.m */,
 				8849E36214869486008C79BC /* Supporting Files */,
 			);
 			path = UIViewControllerContainmentSample;
@@ -178,7 +173,6 @@
 				8849E36814869486008C79BC /* main.m in Sources */,
 				8849E36C14869486008C79BC /* AppDelegate.m in Sources */,
 				8849E377148694AF008C79BC /* MainViewController.m in Sources */,
-				8849E379148694AF008C79BC /* SampleViewController.m in Sources */,
 				0D6DC92415D05A700003C69C /* ContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

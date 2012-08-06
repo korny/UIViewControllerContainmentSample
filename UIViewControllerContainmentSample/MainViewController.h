@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ContainerViewController.h"
 
-@interface MainViewController : ContainerViewController
+@interface MainViewController : ContainerViewController {
+    IBOutlet UIView *leftView;
+    IBOutlet UIView *topRightView;
+    IBOutlet UIView *bottomRightView;
+}
+
 @end
+

@@ -11,6 +11,7 @@
 @interface ContainerViewController : UIViewController
 
 - (void)setupContainedViewControllers;
-- (void)addChildViewController:(UIViewController *)childController forView:(UIView *)view;
+- (void)addChildViewController:(UIViewController *)childController forSubview:(UIView *)view;
+- (void)addChildViewControllerWithIdentifier:(NSString *)identifier forSubview:(UIView *)view;
 
 @end
